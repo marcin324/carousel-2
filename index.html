@@ -9,24 +9,47 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
+		<div class="hash">
+			<p>View:
+				<a href="#carousel-cell1">View cell 1,</a>
+				<a href="#carousel-cell2">View cell 2,</a>
+				<a href="#carousel-cell3">View cell 3,</a>
+				<a href="#carousel-cell4">View cell 4,</a>
+				<a href="#carousel-cell5">View cell 5</a>
+			</p>
+		</div>
+
+		<button id="restart" class="button">Restart</button>
+		
 		<div class="main-carousel">
-  			<div class="carousel-cell" style="background-image: url(https://images.pexels.com/photos/763037/pexels-photo-763037.jpeg?auto=compress&cs=tinysrgb&h=460); background-size: cover;">
-  				<div class="container">First slide</div>
+  			<div class="carousel-cell" id="carousel-cell1" style="background-image: url(https://images.pexels.com/photos/763037/pexels-photo-763037.jpeg?auto=compress&cs=tinysrgb&h=460); background-size: cover;">
+  				<div class="container">
+  					<p>Rain</p>
+  				</div>
   			</div>
-  			<div class="carousel-cell" style="background-image: url(https://images.pexels.com/photos/462024/pexels-photo-462024.jpeg?auto=compress&cs=tinysrgb&h=460); background-size: cover;">
-  				<div class="container">Second Slide</div>
+  			<div class="carousel-cell" id="carousel-cell2" style="background-image: url(https://images.pexels.com/photos/462024/pexels-photo-462024.jpeg?auto=compress&cs=tinysrgb&h=460); background-size: cover;">
+  				<div class="container">
+  					<p>Beach</p>
+  				</div>
   			</div>
-  			<div class="carousel-cell" style="background-image: url(https://images.pexels.com/photos/358532/pexels-photo-358532.jpeg?auto=compress&cs=tinysrgb&h=460); background-size: cover;">
-  				<div class="container">Third slide</div>
+  			<div class="carousel-cell" id="carousel-cell3" style="background-image: url(https://images.pexels.com/photos/358532/pexels-photo-358532.jpeg?auto=compress&cs=tinysrgb&h=460); background-size: cover;">
+  				<div class="container">
+  					<p>Mountains</p>
+  				</div>
   			</div>
-  			<div class="carousel-cell" style="background-image: url(https://images.pexels.com/photos/355321/pexels-photo-355321.jpeg?auto=compress&cs=tinysrgb&h=460); background-size: cover;">
-  				<div class="container">Fourth slide</div>
+  			<div class="carousel-cell" id="carousel-cell4" style="background-image: url(https://images.pexels.com/photos/355321/pexels-photo-355321.jpeg?auto=compress&cs=tinysrgb&h=460); background-size: cover;">
+  				<div class="container">
+  					<p>Forest</p>
+  				</div>
   			</div>
-  			<div class="carousel-cell" style="background-image: url(https://images.pexels.com/photos/416728/pexels-photo-416728.jpeg?auto=compress&cs=tinysrgb&h=460); background-size: cover;">
-  				<div class="container">Fifth slide</div>
+  			<div class="carousel-cell" id="carousel-cell5" style="background-image: url(https://images.pexels.com/photos/416728/pexels-photo-416728.jpeg?auto=compress&cs=tinysrgb&h=460); background-size: cover;">
+  				<div class="container">
+  					<p>Winter</p>
+  				</div>
   			</div>
-</div>
+		</div>
 		<script src="vendor/flickity.pkgd.min.js"></script>
+		<script src="vendor/hash.js"></script>
 		<script  src="js/script.js"></script>
 	</body>
 </html>
