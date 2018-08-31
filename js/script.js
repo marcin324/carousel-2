@@ -10,7 +10,16 @@ var flkty = new Flickity( '.main-carousel', {
 	contain: true
 });
 
+// Przycisk 'restart'
+
 document.getElementById('restart').addEventListener('click', function() {
-    flkty.next(); // przycisk 'restart'
+    flkty.next();
     flkty.select(0);
+});
+
+var progressBar = document.querySelector('.progress-bar')
+
+flkty.on( 'scroll', function( progress ) {
+  progress = Math.max( 0, Math.min( 1, progress ) );
+  progressBar.style.width = progress * 100 + '%';
 });
