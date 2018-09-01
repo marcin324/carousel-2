@@ -24,45 +24,54 @@
 
 		<button id="restart" class="button">Restart</button>
 		
+		<!-- Karuzela -->
 		<div class="main-carousel">
-  			<div class="carousel-cell" id="carousel-cell1" style="background-image: url(https://images.pexels.com/photos/763037/pexels-photo-763037.jpeg?auto=compress&cs=tinysrgb&h=460); background-size: cover;">
+  			<div class="carousel-cell" id="carousel-cell1">
   				<div class="container">
-  					<p></p>
+  					<h2>{{{ title }}}</h2>
+					<p>{{{ description }}}</p>
   				</div>
   			</div>
-  			<div class="carousel-cell" id="carousel-cell2" style="background-image: url(https://images.pexels.com/photos/462024/pexels-photo-462024.jpeg?auto=compress&cs=tinysrgb&h=460); background-size: cover;">
+  			<div class="carousel-cell" id="carousel-cell2">
   				<div class="container">
-  					<p></p>
+  					<h2>{{{ title }}}</h2>
+					<p>{{{ description }}}</p>
   				</div>
   			</div>
-  			<div class="carousel-cell" id="carousel-cell3" style="background-image: url(https://images.pexels.com/photos/358532/pexels-photo-358532.jpeg?auto=compress&cs=tinysrgb&h=460); background-size: cover;">
+  			<div class="carousel-cell" id="carousel-cell3">
   				<div class="container">
-  					<p></p>
+  					<h2>{{{ title }}}</h2>
+					<p>{{{ description }}}</p>
   				</div>
   			</div>
-  			<div class="carousel-cell" id="carousel-cell4" style="background-image: url(https://images.pexels.com/photos/355321/pexels-photo-355321.jpeg?auto=compress&cs=tinysrgb&h=460); background-size: cover;">
+  			<div class="carousel-cell" id="carousel-cell4">
   				<div class="container">
-  					<p></p>
+  					<h2>{{{ title }}}</h2>
+					<p>{{{ description }}}</p>
   				</div>
   			</div>
-  			<div class="carousel-cell" id="carousel-cell5" style="background-image: url(https://images.pexels.com/photos/416728/pexels-photo-416728.jpeg?auto=compress&cs=tinysrgb&h=460); background-size: cover;">
+  			<div class="carousel-cell" id="carousel-cell5">
   				<div class="container">
-  					<p></p>
+  					<h2>{{{ title }}}</h2>
+					<p>{{{ description }}}</p>
   				</div>
   			</div>
-  			<div class="carousel-cell" id="carousel-cell6" style="background-image: url(https://images.pexels.com/photos/709552/pexels-photo-709552.jpeg?auto=compress&cs=tinysrgb&h=350); background-size: cover;">
+  			<div class="carousel-cell" id="carousel-cell6">
   				<div class="container">
-  					<p></p>
+  					<h2>{{{ title }}}</h2>
+					<p>{{{ description }}}</p>
   				</div>
   			</div>
-  			<div class="carousel-cell" id="carousel-cell7" style="background-image: url(https://images.pexels.com/photos/757432/pexels-photo-757432.jpeg?auto=compress&cs=tinysrgb&h=350); background-size: cover;">
+  			<div class="carousel-cell" id="carousel-cell7">
   				<div class="container">
-  					<p></p>
+  					<h2>{{{ title }}}</h2>
+					<p>{{{ description }}}</p>
   				</div>
   			</div>
-  			<div class="carousel-cell" id="carousel-cell8" style="background-image: url(https://images.pexels.com/photos/723991/pexels-photo-723991.jpeg?auto=compress&cs=tinysrgb&h=350); background-size: cover;">
+  			<div class="carousel-cell" id="carousel-cell8">
   				<div class="container">
-  					<p></p>
+  					<h2>{{{ title }}}</h2>
+					<p>{{{ description }}}</p>
   				</div>
   			</div>
 
@@ -70,52 +79,93 @@
 
 		<div class="progress-bar"></div>
 
-		var arrayOne = [
+		<!-- Szablon pojedynczego slajdu -->
+		<script id="template-cell" type="x-tmpl-mustache">
+				<img src = {{ image }}>
+				<h2>{{ title }}</h2>
+				<p>{{ description }}</p>
+		</script>
+
+		<!-- Tablica z obiektami reprezentującymi poszczególne slajdy -->
+		var slides = [
 			{
 				image: "https://images.pexels.com/photos/763037/pexels-photo-763037.jpeg?auto=compress&cs=tinysrgb&h=460",
 				title: 'rain',
-				description:
-			}
+				description: '<div class="carousel-cell" id="carousel-cell1" style="background-image: url(https://images.pexels.com/photos/763037/pexels-photo-763037.jpeg?auto=compress&cs=tinysrgb&h=460); background-size: cover;">
+  				<div class="container">
+  					<p></p>
+  				</div>
+  			</div>'
+			},
 			{
 				image: "https://images.pexels.com/photos/462024/pexels-photo-462024.jpeg?auto=compress&cs=tinysrgb&h=460",
 				title: 'beach',
-				description:
-			}
+				description: '<div class="carousel-cell" id="carousel-cell2" style="background-image: url(https://images.pexels.com/photos/462024/pexels-photo-462024.jpeg?auto=compress&cs=tinysrgb&h=460); background-size: cover;">
+  				<div class="container">
+  					<p></p>
+  				</div>
+  			</div>'
+			},
 			{
 				image: "https://images.pexels.com/photos/358532/pexels-photo-358532.jpeg?auto=compress&cs=tinysrgb&h=460",
 				title: 'mountains',
-				description:
-			}
+				description: '<div class="carousel-cell" id="carousel-cell3" style="background-image: url(https://images.pexels.com/photos/358532/pexels-photo-358532.jpeg?auto=compress&cs=tinysrgb&h=460); background-size: cover;">
+  				<div class="container">
+  					<p></p>
+  				</div>
+  			</div>'
+			},
 			{
 				image: "https://images.pexels.com/photos/355321/pexels-photo-355321.jpeg?auto=compress&cs=tinysrgb&h=460",
 				title: 'forest',
-				description:
-			}
+				description: '<div class="carousel-cell" id="carousel-cell4" style="background-image: url(https://images.pexels.com/photos/355321/pexels-photo-355321.jpeg?auto=compress&cs=tinysrgb&h=460); background-size: cover;">
+  				<div class="container">
+  					<p></p>
+  				</div>
+  			</div>'
+			},
 			{
 				image: "https://images.pexels.com/photos/416728/pexels-photo-416728.jpeg?auto=compress&cs=tinysrgb&h=460",
 				title: 'winter',
-				description:
-			}
+				description: '<div class="carousel-cell" id="carousel-cell5" style="background-image: url(https://images.pexels.com/photos/416728/pexels-photo-416728.jpeg?auto=compress&cs=tinysrgb&h=460); background-size: cover;">
+  				<div class="container">
+  					<p></p>
+  				</div>
+  			</div>'
+			},
 			{
 				image: "https://images.pexels.com/photos/709552/pexels-photo-709552.jpeg?auto=compress&cs=tinysrgb&h=350",
 				title: 'river',
-				description:
-			}
+				description: '<div class="carousel-cell" id="carousel-cell6" style="background-image: url(https://images.pexels.com/photos/709552/pexels-photo-709552.jpeg?auto=compress&cs=tinysrgb&h=350); background-size: cover;">
+  				<div class="container">
+  					<p></p>
+  				</div>
+  			</div>'
+			},
 			{
 				image: "https://images.pexels.com/photos/757432/pexels-photo-757432.jpeg?auto=compress&cs=tinysrgb&h=350",
 				title: 'market',
-				description:
-			}
+				description: '<div class="carousel-cell" id="carousel-cell7" style="background-image: url(https://images.pexels.com/photos/757432/pexels-photo-757432.jpeg?auto=compress&cs=tinysrgb&h=350); background-size: cover;">
+  				<div class="container">
+  					<p></p>
+  				</div>
+  			</div>'
+			},
 			{
 				image: "https://images.pexels.com/photos/723991/pexels-photo-723991.jpeg?auto=compress&cs=tinysrgb&h=350",
 				title: 'waiting for customer',
-				description:
+				description: '<div class="carousel-cell" id="carousel-cell8" style="background-image: url(https://images.pexels.com/photos/723991/pexels-photo-723991.jpeg?auto=compress&cs=tinysrgb&h=350); background-size: cover;">
+  				<div class="container">
+  					<p></p>
+  				</div>
+  			</div>'
 			}
 
 		]
 
 		<script src="vendor/flickity.pkgd.min.js"></script>
 		<script src="vendor/hash.js"></script>
+		<!-- podłączenie mustache.js -->
 		<script src="vendor/mustache.js"></script>
 		<script src="js/script.js"></script>
 	</body>

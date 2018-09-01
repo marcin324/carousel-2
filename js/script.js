@@ -1,5 +1,15 @@
 'use strict';
 
+// Szablon
+
+var templateCell = document.getElementById('template-cell').innerHTML;
+var listSlides = '';
+
+for(var i = 0; i < slides.length; i++){
+	console.log(slides);
+	listSlides += Mustache.render(templateCell, slides.length[i]);
+}
+
 var flkty = new Flickity( '.main-carousel', {
 	wrapAround: true,
 	pageDots: false, // Ten sam efekt można uzyskać w pliku stylów dla kropek 'display: none;'
