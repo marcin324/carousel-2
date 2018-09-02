@@ -16,9 +16,6 @@
 				<a href="#carousel-cell3">cell 3</a>
 				<a href="#carousel-cell4">cell 4</a>
 				<a href="#carousel-cell5">cell 5</a>
-				<a href="#carousel-cell6">cell 6</a>
-				<a href="#carousel-cell7">cell 7</a>
-				<a href="#carousel-cell8">cell 8</a>
 			</p>
 		</div>
 
@@ -28,140 +25,71 @@
 		<div class="main-carousel">
   			<div class="carousel-cell" id="carousel-cell1">
   				<div class="container">
-  					<h2>{{{ title }}}</h2>
-					<p>{{{ description }}}</p>
-  				</div>
+				</div>
   			</div>
   			<div class="carousel-cell" id="carousel-cell2">
   				<div class="container">
-  					<h2>{{{ title }}}</h2>
-					<p>{{{ description }}}</p>
   				</div>
   			</div>
   			<div class="carousel-cell" id="carousel-cell3">
   				<div class="container">
-  					<h2>{{{ title }}}</h2>
-					<p>{{{ description }}}</p>
   				</div>
   			</div>
   			<div class="carousel-cell" id="carousel-cell4">
   				<div class="container">
-  					<h2>{{{ title }}}</h2>
-					<p>{{{ description }}}</p>
   				</div>
   			</div>
   			<div class="carousel-cell" id="carousel-cell5">
   				<div class="container">
-  					<h2>{{{ title }}}</h2>
-					<p>{{{ description }}}</p>
   				</div>
   			</div>
-  			<div class="carousel-cell" id="carousel-cell6">
-  				<div class="container">
-  					<h2>{{{ title }}}</h2>
-					<p>{{{ description }}}</p>
-  				</div>
-  			</div>
-  			<div class="carousel-cell" id="carousel-cell7">
-  				<div class="container">
-  					<h2>{{{ title }}}</h2>
-					<p>{{{ description }}}</p>
-  				</div>
-  			</div>
-  			<div class="carousel-cell" id="carousel-cell8">
-  				<div class="container">
-  					<h2>{{{ title }}}</h2>
-					<p>{{{ description }}}</p>
-  				</div>
-  			</div>
-
-		</div>
+  		</div>
 
 		<div class="progress-bar"></div>
 
 		<!-- Szablon pojedynczego slajdu -->
-		<script id="template-cell" type="x-tmpl-mustache">
-				<img src = {{ image }}>
-				<h2>{{ title }}</h2>
-				<p>{{ description }}</p>
+		<script id="template-slide" type="x-tmpl-mustache">
+			<div class="carousel-cell" id="carousel-cell{{number}}" style="background-image: url({{image}}); background-size: cover;">
+				<div class="container">
+  					<h3>{{ title }}</h3>
+  					{{{description}}}
+  				</div>
+  			</div>	
 		</script>
 
 		<!-- Tablica z obiektami reprezentującymi poszczególne slajdy -->
-		var slides = [
-			{
-				image: "https://images.pexels.com/photos/763037/pexels-photo-763037.jpeg?auto=compress&cs=tinysrgb&h=460",
-				title: 'rain',
-				description: '<div class="carousel-cell" id="carousel-cell1" style="background-image: url(https://images.pexels.com/photos/763037/pexels-photo-763037.jpeg?auto=compress&cs=tinysrgb&h=460); background-size: cover;">
-  				<div class="container">
-  					<p></p>
-  				</div>
-  			</div>'
+		<script>
+		var slidesData = [{
+				title: 'Desert',
+				image: 'https://images.pexels.com/photos/459319/pexels-photo-459319.jpeg?auto=compress&cs=tinysrgb&h=350',
+				description: '<p>Beautiful and terrifying</p>',
+				number: '1'
 			},
 			{
-				image: "https://images.pexels.com/photos/462024/pexels-photo-462024.jpeg?auto=compress&cs=tinysrgb&h=460",
-				title: 'beach',
-				description: '<div class="carousel-cell" id="carousel-cell2" style="background-image: url(https://images.pexels.com/photos/462024/pexels-photo-462024.jpeg?auto=compress&cs=tinysrgb&h=460); background-size: cover;">
-  				<div class="container">
-  					<p></p>
-  				</div>
-  			</div>'
+				title: 'Bory Tucholskie',
+				image: 'https://images.pexels.com/photos/302804/pexels-photo-302804.jpeg?auto=compress&cs=tinysrgb&h=350',
+				description: '<p>Relax in silence</p>',
+				number: '2'
 			},
 			{
-				image: "https://images.pexels.com/photos/358532/pexels-photo-358532.jpeg?auto=compress&cs=tinysrgb&h=460",
-				title: 'mountains',
-				description: '<div class="carousel-cell" id="carousel-cell3" style="background-image: url(https://images.pexels.com/photos/358532/pexels-photo-358532.jpeg?auto=compress&cs=tinysrgb&h=460); background-size: cover;">
-  				<div class="container">
-  					<p></p>
-  				</div>
-  			</div>'
+				title: 'Paradise islands',
+				image: 'https://images.pexels.com/photos/457884/pexels-photo-457884.jpeg?auto=compress&cs=tinysrgb&h=350',
+				description: '<p>Life in paradise</p>',
+				number: '3'
 			},
 			{
-				image: "https://images.pexels.com/photos/355321/pexels-photo-355321.jpeg?auto=compress&cs=tinysrgb&h=460",
-				title: 'forest',
-				description: '<div class="carousel-cell" id="carousel-cell4" style="background-image: url(https://images.pexels.com/photos/355321/pexels-photo-355321.jpeg?auto=compress&cs=tinysrgb&h=460); background-size: cover;">
-  				<div class="container">
-  					<p></p>
-  				</div>
-  			</div>'
-			},
+				title: 'Paris',
+				image: 'https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg?auto=compress&cs=tinysrgb&h=350',
+				description: '<p>City of love</p>',
+				number: '4'
+				},
 			{
-				image: "https://images.pexels.com/photos/416728/pexels-photo-416728.jpeg?auto=compress&cs=tinysrgb&h=460",
-				title: 'winter',
-				description: '<div class="carousel-cell" id="carousel-cell5" style="background-image: url(https://images.pexels.com/photos/416728/pexels-photo-416728.jpeg?auto=compress&cs=tinysrgb&h=460); background-size: cover;">
-  				<div class="container">
-  					<p></p>
-  				</div>
-  			</div>'
-			},
-			{
-				image: "https://images.pexels.com/photos/709552/pexels-photo-709552.jpeg?auto=compress&cs=tinysrgb&h=350",
-				title: 'river',
-				description: '<div class="carousel-cell" id="carousel-cell6" style="background-image: url(https://images.pexels.com/photos/709552/pexels-photo-709552.jpeg?auto=compress&cs=tinysrgb&h=350); background-size: cover;">
-  				<div class="container">
-  					<p></p>
-  				</div>
-  			</div>'
-			},
-			{
-				image: "https://images.pexels.com/photos/757432/pexels-photo-757432.jpeg?auto=compress&cs=tinysrgb&h=350",
-				title: 'market',
-				description: '<div class="carousel-cell" id="carousel-cell7" style="background-image: url(https://images.pexels.com/photos/757432/pexels-photo-757432.jpeg?auto=compress&cs=tinysrgb&h=350); background-size: cover;">
-  				<div class="container">
-  					<p></p>
-  				</div>
-  			</div>'
-			},
-			{
-				image: "https://images.pexels.com/photos/723991/pexels-photo-723991.jpeg?auto=compress&cs=tinysrgb&h=350",
-				title: 'waiting for customer',
-				description: '<div class="carousel-cell" id="carousel-cell8" style="background-image: url(https://images.pexels.com/photos/723991/pexels-photo-723991.jpeg?auto=compress&cs=tinysrgb&h=350); background-size: cover;">
-  				<div class="container">
-  					<p></p>
-  				</div>
-  			</div>'
-			}
-
-		]
+				title: 'Penguins',
+				image: 'https://images.pexels.com/photos/689784/pexels-photo-689784.jpeg?auto=compress&cs=tinysrgb&h=350',
+				description: '<p>Funny animals</p>',
+				number: '5'
+			}];
+		</script>
 
 		<script src="vendor/flickity.pkgd.min.js"></script>
 		<script src="vendor/hash.js"></script>

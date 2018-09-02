@@ -2,13 +2,17 @@
 
 // Szablon
 
-var templateCell = document.getElementById('template-cell').innerHTML;
-var listSlides = '';
+var mainCarousel = document.querySelector('.main-carousel');
+var templateSlide = document.getElementById('template-slide').innerHTML;
+var slides = '';
 
-for(var i = 0; i < slides.length; i++){
-	console.log(slides);
-	listSlides += Mustache.render(templateCell, slides.length[i]);
-}
+Mustache.parse(templateSlide);
+
+for(var i = 0; i < slidesData.length; i++){
+	slides += Mustache.render(templateSlide, slidesData[i])
+};
+
+mainCarousel.innerHTML = slides;
 
 var flkty = new Flickity( '.main-carousel', {
 	wrapAround: true,
@@ -30,6 +34,6 @@ document.getElementById('restart').addEventListener('click', function() {
 var progressBar = document.querySelector('.progress-bar')
 
 flkty.on( 'scroll', function( progress ) {
-  progress = Math.max( 0, Math.min( 1, progress ) );
+  progress = Math.max( 0, Math.min( 1, progress ));
   progressBar.style.width = progress * 100 + '%';
 });
