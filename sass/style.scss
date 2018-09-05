@@ -24,7 +24,7 @@ body {
 	.button {
 		height: 50px;
 		position: absolute;
-		left: 50%;
+		left: 44%;
 		margin: 0 auto;
   		padding: 6px 40px;
   		font-size: 16px;
@@ -58,13 +58,12 @@ body {
 					}
 					p {
 						font-size: 24px;
-						font-
 					}
 				}
 			}
 		}
 	}
-
+	
 	.flickity-button {
   		background: transparent;
   		&:hover {
@@ -80,10 +79,18 @@ body {
   		width: 80px;
   		height: 80px;
 	}
-}
 
-.progress-bar {
-  height: 20px;
-  width: 0;
-  background: #444;
+	.progress-bar {
+  		height: 20px;
+  		width: 0;
+  		background: #444;
+	}
+
+	.map-section {
+		#map {
+		height: 400px;
+		width: 100%;
+		background: pink;
+		}
+	}
 }

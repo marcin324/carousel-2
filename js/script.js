@@ -37,3 +37,24 @@ flkty.on( 'scroll', function( progress ) {
   progress = Math.max( 0, Math.min( 1, progress ));
   progressBar.style.width = progress * 100 + '%';
 });
+
+// Mapa
+
+window.initMap = function() {
+	
+	var slidesCoords = slidesData.map(function(x){
+		return x.coords;
+	})
+
+	var map = new google.maps.Map(document.getElementById('map'),{
+		zoom: 6,
+		center: slidesCoords[0]
+	});
+
+	slidesCoords.forEach(function(x){
+		var marker = new google.maps.Marker({
+			position: x,
+			map: map
+		})
+	});
+}

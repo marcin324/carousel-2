@@ -35,6 +35,11 @@
   		<!-- Scroll -->
 		<div class="progress-bar"></div>
 
+		<!-- Mapa -->
+		<div class="map-section">
+			<div id="map"></div>
+		</div>
+
 		<!-- Szablon pojedynczego slajdu -->
 		<script id="template-slide" type="x-tmpl-mustache">
 			<div class="carousel-cell" id="carousel-cell{{number}}" style="background-image: url({{image}}); background-size: cover;">
@@ -51,31 +56,36 @@
 				title: 'Sahara',
 				image: 'https://images.pexels.com/photos/459319/pexels-photo-459319.jpeg?auto=compress&cs=tinysrgb&h=350',
 				description: '<p>Beautiful and terrifying</p>',
-				number: '1'
+				number: '1',
+				coords: {lat: 24.604, lng: 13.076}
 			},
 			{
 				title: 'Bory Tucholskie',
 				image: 'https://images.pexels.com/photos/302804/pexels-photo-302804.jpeg?auto=compress&cs=tinysrgb&h=350',
 				description: '<p>Relax in silence</p>',
-				number: '2'
+				number: '2',
+				coords: {lat: 53.985, lng: 17.842}
 			},
 			{
-				title: 'Paradise islands',
-				image: 'https://images.pexels.com/photos/457884/pexels-photo-457884.jpeg?auto=compress&cs=tinysrgb&h=350',
+				title: 'Tahiti',
+				image: 'https://dx-world.net/wp-content/uploads/2018/01/tx5x.jpg',
 				description: '<p>Life in paradise</p>',
-				number: '3'
+				number: '3',
+				coords: {lat: -17.517, lng: -149.506}
 			},
 			{
 				title: 'Paris',
 				image: 'https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg?auto=compress&cs=tinysrgb&h=350',
 				description: '<p>City of love</p>',
-				number: '4'
+				number: '4',
+				coords: {lat: 48.858, lng: 2.294}
 				},
 			{
 				title: 'Penguins',
 				image: 'https://images.pexels.com/photos/689784/pexels-photo-689784.jpeg?auto=compress&cs=tinysrgb&h=350',
 				description: '<p>Funny animals</p>',
-				number: '5'
+				number: '5',
+				coords: {lat: -64.255, lng: -56.740}
 			}];
 		</script>
 
@@ -84,5 +94,6 @@
 		<!-- podłączenie mustache.js -->
 		<script src="vendor/mustache.js"></script>
 		<script src="js/script.js"></script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN6YrNq5pMhZqoq_LuMq0sA6Lnc4mKFDI&callback=initMap"></script>
 	</body>
 </html>
