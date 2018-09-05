@@ -1,33 +1,101 @@
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-body { position: relative; background: #EDE4DF; font-family: 'Montserrat', sans-serif; }
+body {
+  position: relative;
+  background: #EDE4DF;
+  font-family: 'Montserrat', sans-serif;
+}
 
-body .hash p a { text-transform: uppercase; padding: 0 20px; line-height: 50px; text-decoration: none; color: #000; }
+body .hash p a {
+  text-transform: uppercase;
+  padding: 0 20px;
+  line-height: 50px;
+  text-decoration: none;
+  color: #000;
+}
 
-body .hash p a:hover { background: #999; color: #fff; }
+body .hash p a:hover {
+  background: #999;
+  color: #fff;
+}
 
-body .button { height: 50px; position: absolute; left: 44%; margin: 0 auto; padding: 6px 40px; font-size: 16px; background: #93C1F0; text-transform: uppercase; }
+body .button {
+  height: 50px;
+  position: absolute;
+  left: 44%;
+  margin: 0 auto;
+  padding: 6px 40px;
+  font-size: 16px;
+  background: #93C1F0;
+  text-transform: uppercase;
+}
 
-body .carousel { background: #3F4347; }
+body .carousel {
+  background: #3F4347;
+}
 
-body .carousel .main-carousel { width: 640px; height: 400px; margin: 80px auto 0; min-height: 250px; }
+body .carousel .main-carousel {
+  width: 640px;
+  height: 400px;
+  margin: 80px auto 0;
+  min-height: 250px;
+}
 
-body .carousel .main-carousel .carousel-cell { width: 100%; height: 400px; padding: 100px 200px; border-radius: 5px; }
+body .carousel .main-carousel .carousel-cell {
+  width: 100%;
+  height: 400px;
+  padding: 100px 200px;
+  border-radius: 5px;
+}
 
-body .carousel .main-carousel .carousel-cell .container { max-width: 1200px; margin: 0 auto; height: 50vh; text-align: center; }
+body .carousel .main-carousel .carousel-cell .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 50vh;
+  text-align: center;
+}
 
-body .carousel .main-carousel .carousel-cell .container h3 { font-size: 32px; font-weight: bold; color: white; letter-spacing: 2px; text-shadow: 2px 2px #3F4347; }
+body .carousel .main-carousel .carousel-cell .container h3 {
+  top: 0;
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px #3F4347;
+}
 
-body .carousel .main-carousel .carousel-cell .container p { font-size: 24px; }
+body .carousel .main-carousel .carousel-cell .container p {
+  font-size: 24px;
+  text-shadow: 1px 1px #fff;
+}
 
-body .flickity-button { background: transparent; }
+body .flickity-button {
+  background: transparent;
+}
 
-body .flickity-button:hover { background: transparent; }
+body .flickity-button:hover {
+  background: transparent;
+}
 
-body .flickity-button-icon { fill: white; }
+body .flickity-button-icon {
+  fill: white;
+}
 
-body .flickity-prev-next-button { width: 80px; height: 80px; }
+body .flickity-prev-next-button {
+  width: 80px;
+  height: 80px;
+}
 
-body .progress-bar { height: 20px; width: 0; background: #444; }
+body .progress-bar {
+  height: 20px;
+  width: 0;
+  background: #444;
+}
 
-body .map-section #map { height: 400px; width: 100%; background: pink; }
+body .map-section #map {
+  height: 400px;
+  width: 100%;
+}
+/*# sourceMappingURL=style.css.map */
