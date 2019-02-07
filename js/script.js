@@ -14,7 +14,9 @@ for(var i = 0; i < slidesData.length; i++){
 
 mainCarousel.innerHTML = slides;
 
-var flkty = new Flickity( '.main-carousel', {
+// Zainicjowanie karuzeli
+
+var flkty = new Flickity('.main-carousel', {
 	wrapAround: true,
 	pageDots: false, // Ten sam efekt można uzyskać w pliku stylów dla kropek 'display: none;'
 	hash: true,
@@ -98,14 +100,12 @@ window.initMap = function() {
 	var jumpZoom = zoom - Math.abs(map.getZoom() - zoom);
 	jumpZoom = Math.min(jumpZoom, zoom -1);
 	jumpZoom = Math.max(jumpZoom, 3);
-
 	smoothZoom(map, jumpZoom, function(){
 		smoothPan(map, coords, function(){
 			smoothZoom(map, zoom); 
 		});
 	});
 };
-
 var smoothZoom = function(map, zoom, callback) {
 	var startingZoom = map.getZoom();
 	var steps = Math.abs(startingZoom - zoom);
@@ -116,9 +116,7 @@ var smoothZoom = function(map, zoom, callback) {
 		}
 		return;
 	}
-
 	var stepChange = - (startingZoom - zoom) / steps;
-
 	var i = 0;
 	var timer = window.setInterval(function(){
 		if(++i >= steps) {
@@ -130,14 +128,11 @@ var smoothZoom = function(map, zoom, callback) {
 		map.setZoom(Math.round(startingZoom + stepChange * i));
 	}, 80);
 };
-
 var smoothPan = function(map, coords, callback) {
 	var mapCenter = map.getCenter();
 	coords = new google.maps.LatLng(coords);
-
 	var steps = 12;
 	var panStep = {lat: (coords.lat() - mapCenter.lat()) / steps, lng: (coords.lng() - mapCenter.lng()) / steps};
-
 	var i = 0;
 	var timer = window.setInterval(function(){
 		if(++i >= steps) {
