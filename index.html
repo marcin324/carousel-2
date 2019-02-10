@@ -1,48 +1,50 @@
 <!DOCTYPE HTML>
-<html lang = "en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Carousel</title>
-		<link rel="stylesheet" href="vendor/normalize.css">
-		<link rel="stylesheet" href="vendor/flickity.min.css" media="screen">
-		<link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
-		<link rel="stylesheet" href="css/style.css">
-	</head>
-	<body>
-		
-		<!-- Hash -->
-		<div class="hash">
-			<p>View:
-				<a href="#carousel-cell1">cell 1</a>
-				<a href="#carousel-cell2">cell 2</a>
-				<a href="#carousel-cell3">cell 3</a>
-				<a href="#carousel-cell4">cell 4</a>
-				<a href="#carousel-cell5">cell 5</a>
-			</p>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Carousel</title>
+	<link rel="stylesheet" href="vendor/normalize.css">
+	<link rel="stylesheet" href="vendor/flickity.min.css" media="screen">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+	<!-- Hash -->
+	<div class="hash">
+		<p>View:
+			<a href="#carousel-cell1">cell 1</a>
+			<a href="#carousel-cell2">cell 2</a>
+			<a href="#carousel-cell3">cell 3</a>
+			<a href="#carousel-cell4">cell 4</a>
+			<a href="#carousel-cell5">cell 5</a>
+		</p>
+	</div>
+
+	<!-- Przycisk restart -->
+	<button id="restart" class="button">Restart</button>
+
+	<!-- Karuzela -->
+	<div class="carousel">
+		<div class="main-carousel">
+
 		</div>
+	</div>
 
-		<!-- Przycisk restart -->
-		<button id="restart" class="button">Restart</button>
-		
-		<!-- Karuzela -->
-		<div class="carousel">
-			<div class="main-carousel">
-  			
-  			</div>
-  		</div>
+	<!-- Scroll -->
+	<div class="progress-bar"></div>
 
-  		<!-- Scroll -->
-		<div class="progress-bar"></div>
+	<!-- Mapa -->
+	<div class="map-section">
+		<div id="map"></div>
+	</div>
 
-		<!-- Mapa -->
-		<div class="map-section">
-			<div id="map"></div>
-		</div>
-
-		<!-- Szablon pojedynczego slajdu -->
-		<script id="template-slide" type="x-tmpl-mustache">
-			<div class="carousel-cell" id="carousel-cell{{number}}" style="background-image: url({{image}}); background-size: cover;">
+	<!-- Szablon pojedynczego slajdu -->
+	<script id="template-slide" type="x-tmpl-mustache">
+		<div class="carousel-cell" id="carousel-cell{{number}}" style="background-image: url({{image}}); background-size: cover; background-position: center">
 				<div class="container">
   					<h3>{{ title }}</h3>
   					{{{description}}}
@@ -50,50 +52,67 @@
   			</div>	
 		</script>
 
-		<!-- Tablica z obiektami reprezentującymi poszczególne slajdy -->
-		<script>
+	<!-- Tablica z obiektami reprezentującymi poszczególne slajdy -->
+	<script>
 		var slidesData = [{
 				title: 'Sahara',
 				image: 'https://images.pexels.com/photos/459319/pexels-photo-459319.jpeg?auto=compress&cs=tinysrgb&h=350',
 				description: '<p>Beautiful and terrifying</p>',
 				number: '1',
-				coords: {lat: 24.604, lng: 13.076}
+				coords: {
+					lat: 24.604,
+					lng: 13.076
+				}
 			},
 			{
 				title: 'Bory Tucholskie',
 				image: 'https://images.pexels.com/photos/302804/pexels-photo-302804.jpeg?auto=compress&cs=tinysrgb&h=350',
 				description: '<p>Relax in silence</p>',
 				number: '2',
-				coords: {lat: 53.985, lng: 17.842}
+				coords: {
+					lat: 53.985,
+					lng: 17.842
+				}
 			},
 			{
 				title: 'Tahiti',
 				image: 'https://dx-world.net/wp-content/uploads/2018/01/tx5x.jpg',
 				description: '<p>Life in paradise</p>',
 				number: '3',
-				coords: {lat: -17.517, lng: -149.506}
+				coords: {
+					lat: -17.517,
+					lng: -149.506
+				}
 			},
 			{
 				title: 'Paris',
 				image: 'https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg?auto=compress&cs=tinysrgb&h=350',
 				description: '<p>City of love</p>',
 				number: '4',
-				coords: {lat: 48.858, lng: 2.294}
-				},
+				coords: {
+					lat: 48.858,
+					lng: 2.294
+				}
+			},
 			{
 				title: 'Comodo Dragon',
-				image: 'https://www.walldevil.com/wallpapers/u11/comodo-dragon.jpg',
+				image: 'https://dinoanimals.pl/wp-content/uploads/2013/04/Waran-z-Komodo-14.jpg',
 				description: '<p>Giant lizard</p>',
 				number: '5',
-				coords: {lat: -8.570, lng: 119.440}
-			}];
-		</script>
+				coords: {
+					lat: -8.570,
+					lng: 119.440
+				}
+			}
+		];
+	</script>
 
-		<script src="vendor/flickity.pkgd.min.js"></script>
-		<script src="vendor/hash.js"></script>
-		<!-- podłączenie mustache.js -->
-		<script src="vendor/mustache.js"></script>
-		<script src="js/script.js"></script>
-		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVb_8Ytm_V-Wiw_T8al47_bBdwUQjbPPc&callback=initMap"></script>
-	</body>
+	<script src="vendor/flickity.pkgd.min.js"></script>
+	<script src="vendor/hash.js"></script>
+	<!-- podłączenie mustache.js -->
+	<script src="vendor/mustache.js"></script>
+	<script src="js/script.js"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVb_8Ytm_V-Wiw_T8al47_bBdwUQjbPPc&callback=initMap"></script>
+</body>
+
 </html>
