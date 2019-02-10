@@ -27,7 +27,6 @@ var flkty = new Flickity('.main-carousel', {
 // Przycisk 'restart'
 
 document.getElementById('restart').addEventListener('click', function () {
-	flkty.next();
 	flkty.select(0);
 });
 
@@ -67,10 +66,13 @@ window.initMap = function () {
 			flkty.select(item);
 		})
 
+		/*
 		flkty.on('change', function () {
-			map.panTo(item);
-			map.setZoom(1);
-		})
+				map.panTo(item);
+				map.setZoom(1);
+			})
+		*/
+
 
 		flkty.on('change', function (item) {
 			if (slidesCoords[item] == slidesCoords[0]) {
